@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/movie.css">
 </head>
+
 <body>
-    <h1>welome</h1>
-    <p>exbyumiop</p>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="nav-brand">TMDb Explorer</div>
+    <ul class="nav-links">
+      <li class="dropdown">
+        Movies
+        <ul class="dropdown-menu">
+          <li onclick="fetchCategory('movie/popular')">Popular</li>
+          <li onclick="fetchCategory('movie/now_playing')">Now Playing</li>
+          <li onclick="fetchCategory('movie/upcoming')">Upcoming</li>
+          <li onclick="fetchCategory('movie/top_rated')">Top Rated</li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        TV Shows
+        <ul class="dropdown-menu">
+          <li onclick="fetchCategory('api.themoviedb.org/3/movie/popular?api_key=${API_KEY}tv/popular')">Popular</li>
+          <li onclick="fetchCategory('tv/on_the_air')">On The Air</li>
+          <li onclick="fetchCategory('tv/airing_today')">Airing Today</li>
+          <li onclick="fetchCategory('tv/top_rated')">Top Rated</li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        People
+        <ul class="dropdown-menu">
+          <li onclick="fetchCategory('person/popular')">Popular People</li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        More
+        <ul class="dropdown-menu">
+          <li onclick="fetchCategory('trending/movie/week')">Trending</li>
+          <li onclick="fetchCategory('movie/latest')">Latest Movie</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="nav-actions">
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button onclick="searchMovies()">Search</button>
+      <button class="btn-outline">Log In</button>
+      <button class="btn-primary">Sign Up</button>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main id="content">
+    <h2 class="placeholder-text">Select a category or use the search bar to explore movies and TV shows</h2>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 TMDb Explorer | Built using The Movie Database API</p>
+
+    <!-- Main Content -->
+    <div class="main-content">
+    </div>
+    <footer>
+      <div class="flex-container">
+        <div class="logo">
+          <img src="./images/movielogo.svg" alt="" width="55%">
+          <button class="btn2">Hi adavera!</button>
+        </div>
+
+        <div class="item">
+          <h3><b>THE BASICS</b></h3>
+          <ul class="list">
+            <li><a href="">about TMDB</a></li>
+            <li><a href="">contact us</a></li>
+            <li><a href="">support forums</a></li>
+            <li><a href="">api documentation</a></li>
+            <li><a href=""> system status</a></li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3><b>GET INVOLVED</b></h3>
+          <ul class="list">
+            <li><a href="">about TMDB</a></li>
+            <li><a href="">contact us</a></li>
+            <li><a href="">support forums</a></li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3><b>COMMUNITY</b></h3>
+          <ul class="list">
+            <li><a href="">support forums</a></li>
+            <li><a href="">api documentation</a></li>
+            <li><a href=""> system status</a></li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3><b>LEGAL</b></h3>
+          <ul class="list">
+            <li><a href="">about TMDB</a></li>
+            <li><a href="">contact us</a></li>
+            <li><a href="">support forums</a></li>
+            <li><a href="">api documentation</a></li>
+            <li><a href=""> system status</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+    </footer>
+
+
+    <script src="./js/movie.js"></script>
 </body>
+
 </html>
